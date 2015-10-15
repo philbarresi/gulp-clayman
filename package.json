@@ -1,0 +1,30 @@
+{
+  "name": "gulp-clayman",
+  "version": "0.1.0",
+  "description": "A gulp wrapper for Clayman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xueye/gulp-clayman.git"
+  },
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": "Phil Barresi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xueye/gulp-clayman/issues"
+  },
+  "homepage": "https://github.com/xueye/gulp-clayman#readme",
+  "dependencies": {
+    "clayman": "^0.1.3",
+    "gulp-util": "^3.0.6",
+    "through": "^2.3.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
