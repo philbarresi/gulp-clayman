@@ -9,13 +9,12 @@ var clayman = require("clayman"),
     PluginError = gutil.PluginError,
     File = gutil.File;
 
-module.exports = function (fileName, opt) {
+module.exports = function (fileName, options) {
     if (!fileName) {
         throw new PluginError("gulp-clayman", "Missing fileName");
     }
 
-    // we may support options one day... one day.
-    opt = opt || {};
+    options = options || {};
 
     var firstFile = null,
         fileContents = [];
@@ -48,6 +47,11 @@ module.exports = function (fileName, opt) {
 
         // Grab the Clayman difference
         var endResult = clayman.difference.apply(clayman, fileContents);
+
+        if (options.namespace) {
+            // we have to namespace clayman
+            endResult.namespace(options.namespace);
+        }
 
         // Configure outgoing file.
         var outputPath = path.join(firstFile.base, fileName);
